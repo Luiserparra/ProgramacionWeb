@@ -1,0 +1,76 @@
+import React from 'react';
+
+
+function Content() {
+  return (
+    <div id="parent">
+    <section id="services">
+        <div className="container">
+          <div className="center gap">
+            <h3>Nuestros servicios</h3>
+            <p className="lead">Busca, encuentra y reserva los mejores hospedajes en las mejores locaciones</p>
+          </div>
+          <div className="row">
+            <div class="col s6">
+              <div className="span4">
+                <div className="media">
+                  <div className="pull-left">
+                    <i class="large material-icons">search</i>
+                  </div>
+                  <div className="media-body">
+                    <h4 className="media-heading">BUSCA</h4>
+                    <p>Busca entre los mejores hospedajes en las mejores locaciones que tenemos disponibles para ti para que compares y tomes la mejor desición el cual sera tu nuevo hogar.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s6">
+              <div className="span4">
+                <div className="media">
+                  <div className="pull-left">
+                    <i class="large material-icons">chat</i>
+                  </div>
+                  <div className="media-body">
+                    <h4 className="media-heading">COMUNICATE</h4>
+                    <p>Chatea con los mejores anfitriones de toda barranquilla</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div class="col s6">
+              <div className="span4">
+                <div className="media">
+                  <div className="pull-left">
+                    <i class="large material-icons">star</i>
+                  </div>
+                  <div className="media-body">
+                    <h4 className="media-heading">COMPARA CALIFICACIONES DE OTROS USUARIOS</h4>
+                    <p>Revisa y compara con las opiniones de los anteriores y actuales inquilinos de nuestros anfitriones</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s6">
+              <div className="span4">
+                <div className="media">
+                  <div className="pull-left">
+                    <i class="large material-icons">bookmark</i>
+                  </div>
+                  <div className="media-body">
+                    <h4 className="media-heading">AGENDA CON TU FAVORITO</h4>
+                    <p>No pierdas el tiempo y aprovecha a quedarte con los mejores hospedajes de barranquilla para disfrutar al maximo tu vida universitaria</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    );
+}
+
+export default Content;
+
