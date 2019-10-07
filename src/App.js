@@ -1,18 +1,33 @@
-import React from 'react';
-import Header from './Home/header';
-import Slider from './Home/slider';
-import Footer from './Home/footer';
-import Content from './Home/content';
+import React, { Component } from 'react';
+import Home from './Home/Home';
+import Aboutus from './About us/aboutus';
 
-function App() {
-  return (
-    <div id="parent">
-      <Header/>
-      <Slider/>
-      <Content/>
-      <Footer/>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = ({
+      principal: true,
+      aboutus: false
+    });
+    this.handler = this.handler.bind(this);
+  }
+
+  handler(a, b) {
+    this.setState({
+      principal: a,
+      aboutus: b
+    })
+  }
+
+  render() {
+    return (
+      <div id="parent">
+        {this.state.principal ?
+          (<Home handler = {this.handler}/>) : (<Aboutus />)
+        }
+      </div>
+    );
+  }
 }
 export default App;
 

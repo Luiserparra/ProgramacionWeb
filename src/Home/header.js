@@ -7,6 +7,8 @@ class Header extends Component {
     super();
     this.state = ({
       user: null,
+      principal: true,
+      aboutus: false
     });
     this.authListener = this.authListener.bind(this);
   }
@@ -17,7 +19,6 @@ class Header extends Component {
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
-      console.log(user);
       if (user) {
         this.setState({ user });
       } else {
@@ -27,8 +28,9 @@ class Header extends Component {
   }
   render() {
     return (
-     <div>{this.state.user ?  ( <Signin/>) : (<Signout/>)}</div>
-    )};
+      <div>{this.state.user ? (<Signin handler = {this.props.handler}/>) : (<Signout handler = {this.props.handler}/>)}</div>
+    )
+  };
 }
 
- export default Header;
+export default Header;

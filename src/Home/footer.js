@@ -4,7 +4,7 @@ import "./footer.scss";
 function Footer() {
   return (
     <div id="parent">
-    <footer class="page-footer blue">
+    <footer className="page-footer blue">
       <div className="container ">
           <div className="row-fluid">
             <div className="span3">
@@ -29,8 +29,8 @@ function Footer() {
             </div>
           </div>
         </div>
-          <div class="footer-copyright">
-            <div class="container">
+          <div className="footer-copyright">
+            <div className="container">
             &copy; 2019 <a target="_blank" href="#">GUEST HOUSE</a>. Todos los derechos reservados.
             </div>
           </div>
