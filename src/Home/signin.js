@@ -9,6 +9,7 @@ class Signin extends Component {
     }
     logout() {
         fire.auth().signOut();
+        window.location.reload();
     }
     render() {
 
