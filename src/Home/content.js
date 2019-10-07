@@ -11,11 +11,11 @@ function Content() {
             <p className="lead">Busca, encuentra y reserva los mejores hospedajes en las mejores locaciones</p>
           </div>
           <div className="row">
-            <div class="col s6">
+            <div className="col s6">
               <div className="span4">
                 <div className="media">
                   <div className="pull-left">
-                    <i class="large material-icons">search</i>
+                    <i className="large material-icons">search</i>
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">BUSCA</h4>
@@ -24,11 +24,11 @@ function Content() {
                 </div>
               </div>
             </div>
-            <div class="col s6">
+            <div className="col s6">
               <div className="span4">
                 <div className="media">
                   <div className="pull-left">
-                    <i class="large material-icons">chat</i>
+                    <i className="large material-icons">chat</i>
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">COMUNICATE</h4>
@@ -39,11 +39,11 @@ function Content() {
             </div>
           </div>
           <div className="row">
-            <div class="col s6">
+          <div className="col s6">
               <div className="span4">
                 <div className="media">
                   <div className="pull-left">
-                    <i class="large material-icons">star</i>
+                    <i className="large material-icons">star</i>
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">COMPARA CALIFICACIONES DE OTROS USUARIOS</h4>
@@ -52,11 +52,11 @@ function Content() {
                 </div>
               </div>
             </div>
-            <div class="col s6">
+            <div className="col s6">
               <div className="span4">
                 <div className="media">
                   <div className="pull-left">
-                    <i class="large material-icons">bookmark</i>
+                    <i className="large material-icons">bookmark</i>
                   </div>
                   <div className="media-body">
                     <h4 className="media-heading">AGENDA CON TU FAVORITO</h4>
