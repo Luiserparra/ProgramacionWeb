@@ -20,7 +20,7 @@ class Signout extends Component {
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><a className="waves-effect waves-light btn modal-trigger" href="#modalLogin">Iniciar sesión</a></li>
                 <li><a className="waves-effect waves-light btn modal-trigger" href="#modalSignin">Registrarse</a></li>
-                <li><a className="waves-effect waves-light btn" onClick = {() => this.props.handler(false,true,false)} >Sobre nosotros</a></li>
+                <li><a className="waves-effect waves-light btn" onClick = {() => this.props.handler(false,true,false,false)} >Sobre nosotros</a></li>
               </ul>
             </div>
           </nav>

@@ -14,7 +14,7 @@ class Profile extends Component {
                     <div className="nav-wrapper  blue">
                         <a href="#" className="brand-logo "><img src={require("../Home/images/logo_transparent.png")} className="picture1" /></a>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            <li><a href="#" onClick={() => this.props.handler(true, false, false)}>Pagina principal</a></li>
+                            <li><a href="#" onClick={() => this.props.handler(true, false, false,false)}>Pagina principal</a></li>
                         </ul>
                     </div>
                 </nav>
