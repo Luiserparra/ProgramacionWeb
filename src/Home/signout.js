@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ContentModalLogin from './contentModalLogin';
 import ContentModalSignin from './contentModalSignin';
-import { Redirect, BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Aboutus from '../About us/aboutus';
+import  "./Home.scss";
+
+
 
 class Signout extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Signout extends Component {
         <header className="navbar">
           <nav>
             <div className="nav-wrapper blue">
-              <a href="#" className="brand-logo">Guest house (Logo)</a>
+              <a href="#" className="brand-logo"><img src={require("./images/logo_transparent.png")} class = "picture1 "/></a>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><a className="waves-effect waves-light btn modal-trigger" href="#modalLogin">Iniciar sesión</a></li>
                 <li><a className="waves-effect waves-light btn modal-trigger" href="#modalSignin">Registrarse</a></li>

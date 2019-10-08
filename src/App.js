@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div id="parent">
         {this.state.principal ?
-          (<Home handler = {this.handler}/>) : (<Aboutus />)
+          (<Home handler = {this.handler}/>) : (<Aboutus handler = {this.handler}/>)
         }
       </div>
     );
