@@ -21,8 +21,10 @@ class Header extends Component {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ user });
+        localStorage.setItem('user', user.displayName ? user.displayName : user.email);
       } else {
         this.setState({ user: null });
+        localStorage.setItem('user', '');
       }
     });
   }

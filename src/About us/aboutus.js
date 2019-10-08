@@ -11,7 +11,7 @@ class Aboutus extends Component {
                     <div className="nav-wrapper  blue">
                         <a href="#" className="brand-logo "><img src={require("../Home/images/logo_transparent.png")} className="picture1" /></a>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
-                            <li><a href="#" onClick={() => this.props.handler(true, false)}>Pagina principal</a></li>
+                            <li><a href="#" onClick={() => this.props.handler(true, false,false)}>Pagina principal</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -25,7 +25,18 @@ class Aboutus extends Component {
                         <div className="col s12" align="center">
                             <h1>Nuestro Equipo</h1>
                         </div>
-                        <div className = "col s6"></div>
+                        <div className="col s4" align="center">
+                            <div className="row"><i class="large material-icons">person</i></div>
+                            <div className="row">Kenneth S. Ortega Lallemand</div>
+                        </div>
+                        <div className="col s4" align="center">
+                            <div className="row" ><i class="large material-icons">person</i></div>
+                            <div className="row">Luis Ernesto Parra Beltrán</div>
+                        </div>
+                        <div className="col s4" align="center">
+                            <div className="row"><i class="large material-icons">person</i></div>
+                            <div className="row">Elkin F. Rodriguez Perez</div>
+                        </div>
                     </div>
                 </div>
             </div>

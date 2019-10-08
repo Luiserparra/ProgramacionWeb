@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fire from '../firebase';
+import './Home.scss'
 
 class Signin extends Component {
 
@@ -18,10 +19,11 @@ class Signin extends Component {
                 <header className="navbar">
                     <nav>
                         <div className="nav-wrapper blue">
-                            <a href="#" className="brand-logo"><img src="images/logo_transparent.png"/></a>
+                            <a href="#" className="brand-logo"><img src={require("./images/logo_transparent.png")} class = "picture1"/></a>
                             <ul id="nav-mobile" className="right hide-on-med-and-down">
+                                <li><a class="btn-floating pulse"><i class="material-icons" onClick = {() => this.props.handler(false,false,true)}>account_circle</i></a></li>
                                 <li><a className="waves-effect waves-light btn " onClick={this.logout} >Cerrar sesión</a></li>
-                                <li><a className="waves-effect waves-light btn " onClick = {() => this.props.handler(false,true)} >Sobre nosotros</a></li>
+                                <li><a className="waves-effect waves-light btn " onClick = {() => this.props.handler(false,true,false)} >Sobre nosotros</a></li>
                             </ul>
                         </div>
                     </nav>
