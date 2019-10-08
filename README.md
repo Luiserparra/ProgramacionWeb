@@ -3,6 +3,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Host en firebase
 https://guest-house-a39d5.firebaseapp.com
 
+## install needed for local deploy
+
+npm install materialize-css@next
+npm install --save firebase
+
 ## Available Scripts
 
 In the project directory, you can run:
