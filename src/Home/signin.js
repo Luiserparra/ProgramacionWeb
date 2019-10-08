@@ -23,8 +23,9 @@ class Signin extends Component {
                             <ul id="nav-mobile" className="right hide-on-med-and-down">
                                 <li><a class="btn-floating pulse"><i class="material-icons" onClick = {() => this.props.handler(false,false,false,true)}>search</i></a></li>
                                 <li><a class="btn-floating pulse"><i class="material-icons" onClick = {() => this.props.handler(false,false,true,false)}>account_circle</i></a></li>
+                                <li><a className="waves-effect waves-light btn " onClick = {() => this.props.handler(false,false,false,false,true)} >Anfitriòn</a></li>
                                 <li><a className="waves-effect waves-light btn " onClick={this.logout} >Cerrar sesión</a></li>
-                                <li><a className="waves-effect waves-light btn " onClick = {() => this.props.handler(false,true,false,false)} >Sobre nosotros</a></li>
+                                <li><a className="waves-effect waves-light btn " onClick = {() => this.props.handler(false,true,false,false,false)} >Sobre nosotros</a></li>
                             </ul>
                         </div>
                     </nav>
