@@ -4,6 +4,7 @@ import Aboutus from './About us/aboutus';
 import Profile from './profile/profile';
 import Seeker from './seeker/seeker';
 import Newanfitrion from './anfitrion/newanfitrion';
+import Addcasa from './addcasa/addcasa';
 
 class App extends Component {
   constructor(props) {
@@ -13,17 +14,20 @@ class App extends Component {
       aboutus: false,
       profile: false,
       seeker: false,
-      newanfitrion: false
+      newanfitrion: false,
+      addcasa:false
     });
     this.handler = this.handler.bind(this);
   }
 
-  handler(a, b, c, d) {
+  handler(a, b, c, d, e, f) {
     this.setState({
       principal: a,
       aboutus: b,
       profile: c,
-      seeker: d
+      seeker: d,
+      newanfitrion: e,
+      addcasa:f
     })
     if(a){
       window.location.reload();
@@ -39,7 +43,8 @@ class App extends Component {
           (this.state.aboutus ? (<Aboutus handler = {this.handler}/>) : 
           (this.state.profile ? (<Profile handler = {this.handler}/>) : 
           (this.state.seeker ? (<Seeker handler = {this.handler}/>) :
-          (<Newanfitrion handler = {this.handler}/>))))
+          (this.state.newanfitrion ? (<Newanfitrion handler = {this.handler}/>) :
+          (<Addcasa handler = {this.handler}/>)))))
         }
       </div>
     );
