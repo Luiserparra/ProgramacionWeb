@@ -3,7 +3,7 @@ import Header from './header';
 import Slider from './slider';
 import Footer from './footer';
 import Content from './content';
-
+import './Home.scss';
 class Home extends Component {
     constructor(props) {
         super(props);
