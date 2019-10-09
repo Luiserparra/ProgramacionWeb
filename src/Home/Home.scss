@@ -1,67 +1,12 @@
-.picture1 {
+img.picture1 {
     width: 100px;
-    height: 65px;
+    height: 100px;
     margin: 0;
     padding: 0;
+    position: relative;
+    top: -15px;
 }
 
-
-#servicios{
-    color: red;  
-    border: 1px solid greenyellow;
-    background-color: aqua;
-}
-
-#busca{
-    color: green;  
-    border: 1px solid yellow;
-    background-color: orange;
-}
-
-#comunicate{
-    color: green;  
-    border: 1px solid yellow;
-    background-color: orange;
-}
-
-#compra{
-    color: green;  
-    border: 1px solid yellow;
-    background-color: orange;
-}
-
-#agenda{
-    color: green;  
-    border: 1px solid yellow;
-    background-color: orange;
-}
-
-#cont{
-    color: rgb(255, 0, 0);
-}
-
-#m1{
-    color: rgba(0, 255, 0, 0.966)
-}
-#m2{
-    color: rgba(0, 255, 0, 0.966)
-}
-#m3{
-    color: rgba(0, 255, 0, 0.966)
-}
-
-#m11{
-    color: blue;
-}
-
-#m21{
-    color: red;
-}
-
-#cerr{
-    color: black;
-}
-
-#guest{
-  color: rgb(217, 255, 0)
+nav{
+    height: 70px;
 }

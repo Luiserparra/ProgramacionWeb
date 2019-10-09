@@ -9,7 +9,8 @@ class ContentModalSignin extends Component {
     this.forgotPassword = this.forgotPassword.bind(this);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      repeatpassword: ''
     };
   }
 
@@ -19,6 +20,10 @@ class ContentModalSignin extends Component {
 
   signup(e) {
     e.preventDefault();
+    if (this.state.password !== this.state.repeatpassword) {
+      alert('Las contraseñas no coinciden');
+      return;
+    }
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
     }).then((u) => { console.log(u) })
       .catch((error) => {
@@ -32,6 +37,9 @@ class ContentModalSignin extends Component {
             break;
           case "auth/user-not-found":
             alert('La cuenta no esta resgistrada en nuestra plataforma por favor registrarse');
+            break;
+          case "auth/invalid-email":
+            alert('Ingrese un correo electronico valido');
             break;
           default:
             break;
@@ -49,10 +57,10 @@ class ContentModalSignin extends Component {
       }).catch(function (e) {
         console.log(e);
         switch (e.code) {
-        case "auth/user-not-found":
+          case "auth/user-not-found":
             alert('La cuenta no esta resgistrada en nuestra plataforma por favor registrarse');
             break;
-        default:
+          default:
             break;
         }
       })
@@ -69,6 +77,10 @@ class ContentModalSignin extends Component {
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Contraseña</label>
             <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword2">Repita su Contraseña</label>
+            <input value={this.state.repeatpassword} onChange={this.handleChange} type="password" name="repeatpassword" className="form-control" id="exampleInputPassword2" placeholder="Password" />
           </div>
           <button type="submit" onClick={this.signup} className="btn btn-success">Registrate</button>
           <button onClick={this.forgotPassword} className="btn btn-success">Recupera tu contraseña</button>
