@@ -9,7 +9,7 @@ class Newanfitrion extends Component {
             <div>
                 <nav>
                     <div className="nav-wrapper  blue">
-                        <a href="#" className="brand-logo "><img src={require("../Home/images/logo_transparent.png")} className="picture1" /></a>
+                        <a href="#" className="brand-logo "><img src={require("../Home/Images/logo_transparent.png")} className="picture1" /></a>
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
                             <li><a href="#" onClick={() => this.props.handler(true, false, false, false, false,false)}>Pagina principal</a></li>
                         </ul>
