@@ -10,12 +10,14 @@ class ContentModalSignin extends Component {
     this.state = {
       email: '',
       password: '',
-      repeatpassword: ''
+      repeatpassword: '',
+      name: ''
     };
   }
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(e.target.name + ', ' + e.target.value);
   }
 
   signup(e) {
@@ -25,7 +27,23 @@ class ContentModalSignin extends Component {
       return;
     }
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-    }).then((u) => { console.log(u) })
+    }).then((u) => {
+      console.log(u);
+      //Agregar usuario a Firestore
+      const db = fire.firestore();
+      db.collection("users").add({
+        Correo: this.state.email,
+        Nombre: this.state.name
+      })
+        .then(function (docRef) {
+          console.log("Document written with ID: ", docRef.id);
+          alert('Cuenta Creada exitosamente');
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+          alert('Hubo un error al crear la cuenta');
+        });
+    })
       .catch((error) => {
         console.log(error.code);
         switch (error.code) {
@@ -69,6 +87,10 @@ class ContentModalSignin extends Component {
     return (
       <div className="col-md-6">
         <form>
+          <div className="form-group">
+            <label for="name">Name</label>
+            <input value={this.state.name} onChange={this.handleChange} placeholder="Enter your name" id="name" type="text" name="name" />
+          </div>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Correo electronico</label>
             <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
