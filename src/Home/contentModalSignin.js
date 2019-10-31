@@ -17,7 +17,6 @@ class ContentModalSignin extends Component {
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(e.target.name + ', ' + e.target.value);
   }
 
   signup(e) {
