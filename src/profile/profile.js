@@ -8,7 +8,8 @@ class Profile extends Component {
         this.Save = this.Save.bind(this);
         this.state = ({
             email: localStorage.getItem('email'),
-            Image: ""
+            Image: "",
+            Nombre: ""
         });
     }
     componentDidMount() {
@@ -19,9 +20,57 @@ class Profile extends Component {
             .then(function (querySnapshot) {
                 console.log(querySnapshot.size);
                 if (querySnapshot.size != 0) {
-                    querySnapshot.forEach(function(doc) {
-                        $('#profilePic').attr('src',doc.data().Image);
-                    });    
+                    querySnapshot.forEach(function (doc) {
+                        $('#profilePic').attr('src', doc.data().Image);
+                    });
+                }
+            })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
+
+        db.collection("users").where("Correo", "==", this.state.email)
+            .get()
+            .then(function (querySnapshot) {
+                console.log(querySnapshot.size);
+                if (querySnapshot.size != 0) {
+                    querySnapshot.forEach(function (doc) {
+                        $('#Nombre').text(doc.data().Nombre);
+                        $("#Nombre").dblclick(function () {
+                            $('#Nombre').after('<input id = "newName" type="text" name="fname"><br>');
+                            $('#newName').after('<input type="button" id = "newNameBtn"value="Actualizar Nombre" />');
+                            $('#Nombre').hide();
+                            $('#newNameBtn').click(function () {
+                                if($('#newName').val()===""){
+                                    return
+                                }
+                                db.collection("users").where("Correo", "==", doc.data().Correo)
+                                    .get()
+                                    .then(function (querySnapshot) {
+                                        console.log(querySnapshot.size);
+                                            querySnapshot.forEach(function (doc) {
+                                                db.collection("users").doc(doc.id).update({
+                                                    Nombre: $('#newName').val()
+                                                })
+                                                    .then(function () {
+                                                        console.log("Document successfully updated!");
+                                                        alert('Nombre actualizado exitosamente');
+                                                        window.location.reload();
+                                                    })
+                                                    .catch(function (error) {
+                                                        // The document probably doesn't exist.
+                                                        console.error("Error updating document: ", error);
+                                                        alert('Hubo un error actualizar el nombre');
+                                                    });
+                                            });
+                                        
+                                    })
+                                    .catch(function (error) {
+                                        console.log("Error getting documents: ", error);
+                                    });
+                            });
+                        });
+                    });
                 }
             })
             .catch(function (error) {
@@ -29,6 +78,7 @@ class Profile extends Component {
             });
 
     }
+
     previewFile = () => {
         const $ = window.$;
         var preview = document.getElementById('profilePic');
@@ -90,6 +140,7 @@ class Profile extends Component {
                 console.log("Error getting documents: ", error);
             });
     }
+
     render() {
         return (
             <div>
@@ -105,7 +156,7 @@ class Profile extends Component {
                     <div class="card-panel z-depth-5">
                         <div className="row">
                             <div className="col s6" align='center'><img id="profilePic" src={require("./images/profile.png")} className="circle responsive-img" /><div class="btn-floating btn-large waves-effect waves-light red file-field input-field botonAdd"><span>Add</span><input type="file" onChange={this.previewFile} /></div></div>
-                            <div className="col s6" aling='center'><h6>Hola a todos, soy</h6><br /><h4>{this.state.email}</h4><br /><b>ESTUDIANTE DE INGENIERIA DE SISTEMAS</b><br />
+                            <div className="col s6" aling='center'><h6>Hola a todos, soy</h6><br /><h4 id="Nombre"></h4><br /><b>ESTUDIANTE DE INGENIERIA DE SISTEMAS</b><br />
                                 <div className="col s4"><i class="material-icons">perm_contact_calendar</i><h6> 16/12/1998</h6></div>
                                 <div className="col s4"><i class="material-icons">local_phone</i><h6> 3001234567</h6></div>
                                 <div className="col s4"><i class="material-icons">email</i><h6>ejemplo@correo.com</h6></div>
