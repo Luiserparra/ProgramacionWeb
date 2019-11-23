@@ -50,7 +50,6 @@ class Profile extends Component {
         }
     }
     Save = (img, mail) => {
-        //console.log(img.src);
         const db = fire.firestore();
         db.collection("profiles").where("Correo", "==", this.state.email)
             .get()
