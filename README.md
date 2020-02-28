@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Host en firebase
-https://guest-house-a39d5.firebaseapp.com
+https://guest-house-a39d5.firebaseapp.com/
 
 ## install needed for local deploy
 

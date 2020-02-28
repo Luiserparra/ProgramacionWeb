@@ -25,17 +25,9 @@ class Aboutus extends Component {
                         <div className="col s12" align="center">
                             <h1>Nuestro Equipo</h1>
                         </div>
-                        <div className="col s4" align="center">
-                            <div className="row"><i class="large material-icons">person</i></div>
-                            <div className="row">Kenneth S. Ortega Lallemand</div>
-                        </div>
-                        <div className="col s4" align="center">
+                        <div className="col s12" align="center">
                             <div className="row" ><i class="large material-icons">person</i></div>
                             <div className="row">Luis Ernesto Parra Beltrán</div>
-                        </div>
-                        <div className="col s4" align="center">
-                            <div className="row"><i class="large material-icons">person</i></div>
-                            <div className="row">Elkin F. Rodriguez Perez</div>
                         </div>
                     </div>
                 </div>
